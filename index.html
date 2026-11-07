@@ -4,146 +4,469 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kenryu & Jeg | Wedding Invitation</title>
+<meta name="theme-color" content="#4b1025">
+<meta name="description" content="You are invited to celebrate the wedding of Kenryu and Jeg Whistly on January 10, 2027.">
+<title>Kenryu & Jeg Whistly | A Royal Filipino Wedding</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
 <style>
-* { box-sizing: border-box; }
+:root {
+  --burgundy: #4b1025;
+  --wine: #681c35;
+  --dark: #290914;
+  --gold: #d7b46a;
+  --lightgold: #f1dfb2;
+  --cream: #f8f0e4;
+  --text: #4b1025;
+}
+
+* { box-sizing: border-box; scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  font-family: Georgia, serif;
-  color: #514333;
-  background: #faf7f0;
-  text-align: center;
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
 }
-header {
-  min-height: 90vh;
+
+a { color: inherit; }
+
+.hero {
+  min-height: 100vh;
+  position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px 20px;
-  background: linear-gradient(#0005,#0006),
-  url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600')
-  center/cover;
+  text-align: center;
+  padding: 35px 18px;
   color: white;
+  background:
+    linear-gradient(rgba(35,5,17,.68),rgba(35,5,17,.82)),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1800')
+    center/cover;
 }
-header p { letter-spacing: 4px; }
-h1 { font-size: clamp(42px, 9vw, 76px); font-weight: normal; }
-.gold { color: #e6c98c; }
-section { padding: 65px 20px; }
-h2 { font-size: 32px; font-weight: normal; color: #967447; }
-.names { font-size: 35px; }
+
+.frame {
+  width: min(750px, 100%);
+  border: 1px solid var(--gold);
+  outline: 1px solid rgba(215,180,106,.4);
+  outline-offset: -9px;
+  padding: 65px 20px;
+}
+
+.ornament {
+  color: var(--gold);
+  font-size: 32px;
+  letter-spacing: 9px;
+}
+
+.eyebrow {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: var(--lightgold);
+}
+
+.hero h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(65px, 12vw, 105px);
+  font-weight: normal;
+  margin: 20px 0;
+  color: var(--lightgold);
+  line-height: 1.2;
+}
+
+.hero .amp {
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: .65em;
+}
+
+.hero-date {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 4px;
+  font-size: 16px;
+  color: var(--lightgold);
+}
+
+.gold-line {
+  height: 1px;
+  width: 100px;
+  background: var(--gold);
+  margin: 24px auto;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 13px 27px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+section {
+  padding: 75px 20px;
+  text-align: center;
+}
+
+.section-dark {
+  background: var(--burgundy);
+  color: var(--cream);
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  color: var(--wine);
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.section-dark .section-title { color: var(--lightgold); }
+
+.script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: var(--gold);
+}
+
+.description {
+  max-width: 620px;
+  margin: 20px auto;
+  line-height: 1.7;
+}
+
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 54px;
+  color: var(--wine);
+}
+
+.section-dark .names { color: var(--lightgold); }
+
 .card {
   max-width: 650px;
   margin: 25px auto;
-  padding: 30px 20px;
-  background: white;
-  border: 1px solid #e5d8c3;
-  border-radius: 8px;
+  padding: 32px 24px;
+  border: 1px solid var(--gold);
+  background: rgba(255,255,255,.06);
 }
+
 #countdown {
-  font-size: 25px;
-  color: #967447;
-  line-height: 1.8;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
 }
-button {
-  background: #967447;
-  color: white;
-  padding: 13px 30px;
-  border: 0;
-  border-radius: 4px;
-  cursor: pointer;
+
+.time {
+  min-width: 95px;
+  padding: 15px 8px;
+  border: 1px solid var(--gold);
+}
+
+.time strong {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 29px;
+  color: var(--lightgold);
+}
+
+.time span {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.detail-label {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-top: 25px;
+}
+
+.detail-value {
+  font-size: 25px;
+  margin-top: 7px;
+}
+
+.traditions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
+  gap: 18px;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.tradition {
+  border: 1px solid var(--gold);
+  padding: 24px 15px;
+  background: rgba(255,255,255,.05);
+}
+
+.tradition h3 {
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
   font-size: 16px;
 }
+
+form {
+  max-width: 500px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-size: 18px;
+}
+
 input, select, textarea {
   width: 100%;
   padding: 13px;
-  margin: 9px 0;
-  border: 1px solid #d9cbb5;
-  border-radius: 4px;
-  font: inherit;
+  background: var(--cream);
+  color: var(--text);
+  border: 1px solid var(--gold);
+  font-family: inherit;
+  font-size: 17px;
 }
-form { max-width: 450px; margin: auto; }
-footer { padding: 30px; background: #514333; color: white; }
+
+textarea { min-height: 100px; }
+
+form button { width: 100%; margin-top: 20px; }
+
+.note {
+  font-size: 14px;
+  color: var(--lightgold);
+}
+
+footer {
+  background: var(--dark);
+  color: var(--lightgold);
+  text-align: center;
+  padding: 40px 15px;
+}
+
+footer .script { font-size: 43px; }
+
+@media(max-width:600px) {
+  section { padding: 55px 17px; }
+  .frame { padding: 55px 12px; }
+  .eyebrow { letter-spacing: 2px; }
+  .hero-date { letter-spacing: 2px; }
+  .time { min-width: 75px; }
+}
 </style>
 </head>
+
 <body>
 
-<header>
-  <p>TOGETHER WITH OUR FAMILIES</p>
-  <h1>Kenryu <span class="gold">&</span> Jeg</h1>
-  <h3>ARE GETTING MARRIED</h3>
-  <p class="gold">JANUARY 10, 2027</p>
-  <p>Alcala, Pangasinan, Philippines</p>
+<header class="hero">
+  <div class="frame">
+    <div class="ornament">✦ ❀ ✦</div>
+    <p class="eyebrow">TOGETHER WITH OUR FAMILIES</p>
+    <p style="font-family:'Great Vibes';font-size:30px;color:#f1dfb2">
+      Joyfully invite you to celebrate
+    </p>
+
+    <h1>Kenryu <span class="amp">&</span><br>Jeg Whistly</h1>
+
+    <div class="gold-line"></div>
+    <p class="eyebrow">THE WEDDING CELEBRATION</p>
+    <p class="hero-date">JANUARY 10, 2027</p>
+    <p>Alcala, Pangasinan, Philippines</p>
+
+    <a href="#invitation" class="btn">OPEN INVITATION</a>
+    <div class="ornament" style="margin-top:30px">✦ ❀ ✦</div>
+  </div>
 </header>
 
-<section>
-  <h2>With Love and Joy</h2>
-  <p>We joyfully invite you to celebrate our wedding day.</p>
-  <p class="names">Kenryu & Jeg</p>
-  <p>Two hearts, one love, one beautiful journey.</p>
+<section id="invitation">
+  <p class="script">A celebration of love</p>
+  <h2 class="section-title">TWO HEARTS, ONE JOURNEY</h2>
+  <div class="gold-line"></div>
+  <p class="description">
+    With grateful hearts and the blessing of our families,
+    we invite you to share in the joy of our wedding day.
+    Your presence will make our celebration even more meaningful.
+  </p>
+  <div class="names">Kenryu & Jeg Whistly</div>
+  <p>One love. One promise. Forever.</p>
 </section>
 
-<section>
-  <h2>Counting Down to Forever</h2>
-  <div class="card">
-    <div id="countdown">Loading countdown...</div>
+<section class="section-dark">
+  <p class="script">The big day</p>
+  <h2 class="section-title">COUNTDOWN TO FOREVER</h2>
+  <div id="countdown">
+    <div class="time"><strong>--</strong><span>DAYS</span></div>
+    <div class="time"><strong>--</strong><span>HOURS</span></div>
+    <div class="time"><strong>--</strong><span>MINUTES</span></div>
+    <div class="time"><strong>--</strong><span>SECONDS</span></div>
   </div>
 </section>
 
 <section>
-  <h2>Wedding Details</h2>
+  <p class="script">Save the date</p>
+  <h2 class="section-title">WEDDING DETAILS</h2>
   <div class="card">
-    <h3>Ceremony & Reception</h3>
-    <p><strong>Date:</strong> January 10, 2027</p>
-    <p><strong>Location:</strong> Alcala, Pangasinan, Philippines</p>
-    <p>We look forward to celebrating this special day with you!</p>
+    <div class="detail-label">THE DATE</div>
+    <div class="detail-value">Sunday, January 10, 2027</div>
+
+    <div class="gold-line"></div>
+
+    <div class="detail-label">THE LOCATION</div>
+    <div class="detail-value">Alcala, Pangasinan</div>
+    <p>Philippines</p>
+
+    <a class="btn"
+       href="https://www.google.com/maps/search/?api=1&query=Alcala+Pangasinan+Philippines"
+       target="_blank" rel="noopener">
+       VIEW LOCATION
+    </a>
+
+    <p class="note">Exact ceremony and reception venues will be announced.</p>
+  </div>
+</section>
+
+<section class="section-dark">
+  <p class="script">A touch of heritage</p>
+  <h2 class="section-title">FILIPINO WEDDING TRADITIONS</h2>
+  <p class="description">
+    Celebrating our love with the beauty of Filipino heritage,
+    family, faith, and traditions.
+  </p>
+
+  <div class="traditions">
+    <div class="tradition">
+      <div style="font-size:35px">❀</div>
+      <h3>SAMPAGUITA</h3>
+      <p>Symbol of purity, love, and devotion.</p>
+    </div>
+    <div class="tradition">
+      <div style="font-size:35px">♛</div>
+      <h3>FILIPINIANA</h3>
+      <p>Honoring the elegance of Filipino culture.</p>
+    </div>
+    <div class="tradition">
+      <div style="font-size:35px">∞</div>
+      <h3>FOREVER</h3>
+      <p>A promise to cherish one another for life.</p>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2>RSVP</h2>
-  <p>Kindly let us know if you can join us.</p>
-  <form action="https://formsubmit.co/YOUR-EMAIL@example.com" method="POST">
-    <input type="hidden" name="_subject" value="Wedding RSVP - Kenryu and Jeg">
-    <input type="text" name="Guest Name" placeholder="Your full name" required>
-    <input type="email" name="Email" placeholder="Your email address">
-    <select name="Attendance" required>
-      <option value="">Will you attend?</option>
-      <option>Joyfully accepts</option>
-      <option>Regretfully declines</option>
+  <p class="script">Dress to celebrate</p>
+  <h2 class="section-title">DRESS CODE</h2>
+  <div class="card">
+    <h3 style="font-family:'Cinzel';color:#681c35">FILIPINO FORMAL / ELEGANT ATTIRE</h3>
+    <p>We invite our guests to wear their elegant formal attire
+       inspired by Filipino culture.</p>
+    <p><strong>Suggested colors:</strong></p>
+    <p style="color:#681c35">Burgundy • Champagne • Gold • Beige</p>
+    <p>Please avoid wearing white, reserved for the bride.</p>
+  </div>
+</section>
+
+<section class="section-dark" id="rsvp">
+  <p class="script">We hope to see you</p>
+  <h2 class="section-title">KINDLY RSVP</h2>
+  <p class="description">
+    Your presence is the greatest gift.
+    Kindly let us know if you can celebrate with us.
+  </p>
+
+  <!-- Replace YOUR-EMAIL@example.com with your real email -->
+  <form action="https://formsubmit.co/YOUR-EMAIL@example.com"
+        method="POST">
+    <input type="hidden" name="_subject"
+           value="Wedding RSVP - Kenryu and Jeg Whistly">
+    <input type="hidden" name="_captcha" value="true">
+
+    <label for="guest">Full name</label>
+    <input id="guest" name="Guest Name"
+           placeholder="Enter your full name" required>
+
+    <label for="email">Email address</label>
+    <input id="email" type="email" name="Email"
+           placeholder="Enter your email">
+
+    <label for="attendance">Will you attend?</label>
+    <select id="attendance" name="Attendance" required>
+      <option value="">Please select</option>
+      <option value="Joyfully accepts">Joyfully accepts</option>
+      <option value="Regretfully declines">Regretfully declines</option>
     </select>
-    <input type="number" name="Number of Guests" min="1" max="20" placeholder="Number of guests" required>
-    <textarea name="Message" placeholder="Your message (optional)"></textarea>
-    <button type="submit">Send RSVP</button>
+
+    <label for="guests">Number of guests</label>
+    <input id="guests" type="number" name="Number of Guests"
+           min="1" max="20" value="1" required>
+
+    <label for="message">Message for the couple</label>
+    <textarea id="message" name="Message"
+              placeholder="Write your wishes here..."></textarea>
+
+    <button class="btn" type="submit">SEND RSVP</button>
   </form>
-  <p><small>RSVP email delivery requires replacing the placeholder email and activating FormSubmit.</small></p>
+  <p class="note">Please replace the email placeholder before accepting RSVPs.</p>
 </section>
 
 <footer>
-  <p>With Love, Kenryu & Jeg</p>
-  <p>January 10, 2027</p>
+  <div class="ornament">✦ ❀ ✦</div>
+  <p class="script">Kenryu & Jeg Whistly</p>
+  <p>JANUARY 10, 2027</p>
+  <p>Forever begins here.</p>
 </footer>
 
 <script>
-const weddingDate = new Date("2027-01-10T00:00:00+08:00").getTime();
+const weddingDate =
+  new Date("2027-01-10T00:00:00+08:00").getTime();
 
 function updateCountdown() {
-  const now = Date.now();
-  const distance = weddingDate - now;
+  const distance = weddingDate - Date.now();
   const el = document.getElementById("countdown");
 
   if (distance <= 0) {
-    el.innerHTML = "Today is our special day! ❤️";
+    el.innerHTML = "<h2>Today is our wedding day! ❤️</h2>";
     return;
   }
 
-  const days = Math.floor(distance / 86400000);
-  const hours = Math.floor((distance % 86400000) / 3600000);
-  const minutes = Math.floor((distance % 3600000) / 60000);
-  const seconds = Math.floor((distance % 60000) / 1000);
+  const values = [
+    Math.floor(distance / 86400000),
+    Math.floor((distance % 86400000) / 3600000),
+    Math.floor((distance % 3600000) / 60000),
+    Math.floor((distance % 60000) / 1000)
+  ];
 
-  el.innerHTML = `${days} Days<br>${hours} Hours<br>${minutes} Minutes<br>${seconds} Seconds`;
+  const labels = ["DAYS", "HOURS", "MINUTES", "SECONDS"];
+
+  el.innerHTML = values.map((value, index) => `
+    <div class="time">
+      <strong>${value}</strong>
+      <span>${labels[index]}</span>
+    </div>
+  `).join("");
 }
+
 updateCountdown();
 setInterval(updateCountdown, 1000);
 </script>
