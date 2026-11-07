@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8f3ed">
+<title>Kenryu & Jeg | Wedding Invitation</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #faf7f2;
+  color: #51483e;
+  text-align: center;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background:
+    linear-gradient(rgba(40,35,27,.40), rgba(40,35,27,.48)),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+  color: white;
+}
+
+.hero-content {
+  max-width: 750px;
+  padding: 35px 20px;
+}
+
+.small-title {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: clamp(45px, 10vw, 85px);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.ampersand {
+  font-style: italic;
+  font-size: .7em;
+}
+
+.hero-date {
+  margin-top: 25px;
+  letter-spacing: 4px;
+  font-size: 17px;
+}
+
+section {
+  padding: 75px 20px;
+}
+
+.section-title {
+  font-size: 34px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  color: #88765d;
+}
+
+.subtitle {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #9c8972;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.divider {
+  width: 65px;
+  height: 1px;
+  background: #b7a487;
+  margin: 25px auto;
+}
+
+.intro {
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+.countdown-section {
+  background: #eee7dc;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.time-box {
+  background: #faf7f2;
+  padding: 22px 15px;
+  min-width: 90px;
+  border-radius: 5px;
+}
+
+.time-box strong {
+  display: block;
+  font-size: 35px;
+  font-weight: normal;
+  color: #88765d;
+}
+
+.time-box span {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 850px;
+  gap: 25px;
+  margin: 35px auto 0;
+}
+
+.detail-card {
+  padding: 35px 20px;
+  background: white;
+  border: 1px solid #e9dfd1;
+}
+
+.detail-card h3 {
+  font-size: 23px;
+  font-weight: normal;
+  color: #88765d;
+  margin-bottom: 18px;
+}
+
+.detail-card p {
+  line-height: 1.9;
+}
+
+.timeline {
+  background: #eee7dc;
+}
+
+.timeline-item {
+  max-width: 400px;
+  margin: 25px auto;
+  padding: 20px;
+  border-bottom: 1px solid #cfc1ad;
+}
+
+.timeline-item h3 {
+  color: #88765d;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+.attire {
+  max-width: 650px;
+  margin: auto;
+  line-height: 2;
+}
+
+.rsvp {
+  background: #eee7dc;
+}
+
+.rsvp-form {
+  max-width: 450px;
+  margin: 30px auto 0;
+  text-align: left;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 9px 0 17px;
+  border: 1px solid #d6c8b6;
+  background: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+.rsvp-form label {
+  font-size: 14px;
+}
+
+button, .map-button {
+  display: inline-block;
+  border: none;
+  background: #88765d;
+  color: white;
+  padding: 15px 30px;
+  font-family: inherit;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover, .map-button:hover {
+  background: #65543e;
+}
+
+footer {
+  padding: 45px 20px;
+  background: #51483e;
+  color: white;
+  line-height: 2;
+}
+
+footer h2 {
+  font-weight: normal;
+  font-size: 30px;
+}
+
+@media(max-width:600px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 18px;
+  }
+
+  .hero-date {
+    font-size: 13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- WELCOME -->
+<header class="hero">
+  <div class="hero-content">
+    <p class="small-title">Together with our families</p>
+    <h1>Kenryu<br><span class="ampersand">&</span><br>Jeg Whistly</h1>
+    <div class="divider"></div>
+    <p class="small-title">Joyfully invite you to celebrate our wedding</p>
+    <p class="hero-date">JANUARY 10, 2027</p>
+  </div>
+</header>
+
+<!-- INTRODUCTION -->
+<section>
+  <p class="subtitle">Two hearts, one love</p>
+  <h2 class="section-title">We're Getting Married!</h2>
+  <div class="divider"></div>
+  <p class="intro">
+    With grateful hearts and the blessing of our families,
+    we invite you to join us as we begin our forever together.
+    Your presence will make our special day even more meaningful.
+    We can't wait to celebrate this beautiful moment with you!
+  </p>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="countdown-section">
+  <p class="subtitle">Save the date</p>
+  <h2 class="section-title">Counting Down to Forever</h2>
+
+  <div class="countdown">
+    <div class="time-box">
+      <strong id="days">00</strong>
+      <span>DAYS</span>
+    </div>
+    <div class="time-box">
+      <strong id="hours">00</strong>
+      <span>HOURS</span>
+    </div>
+    <div class="time-box">
+      <strong id="minutes">00</strong>
+      <span>MINUTES</span>
+    </div>
+    <div class="time-box">
+      <strong id="seconds">00</strong>
+      <span>SECONDS</span>
+    </div>
+  </div>
+</section>
+
+<!-- WEDDING DETAILS -->
+<section>
+  <p class="subtitle">The celebration</p>
+  <h2 class="section-title">Wedding Details</h2>
+  <div class="divider"></div>
+
+  <div class="details">
+    <div class="detail-card">
+      <h3>The Ceremony</h3>
+      <p>
+        January 10, 2027<br>
+        Time: To be announced<br>
+        Alcala, Pangasinan
+      </p>
+    </div>
+
+    <div class="detail-card">
+      <h3>The Reception</h3>
+      <p>
+        January 10, 2027<br>
+        Time: To be announced<br>
+        Alcala, Pangasinan
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="timeline">
+  <p class="subtitle">The big day</p>
+  <h2 class="section-title">Wedding Schedule</h2>
+
+  <div class="timeline-item">
+    <h3>Wedding Ceremony</h3>
+    <p>Time and venue to be announced</p>
+  </div>
+
+  <div class="timeline-item">
+    <h3>Photo Session</h3>
+    <p>Celebrate and capture memories</p>
+  </div>
+
+  <div class="timeline-item">
+    <h3>Wedding Reception</h3>
+    <p>Food, laughter, music and celebration</p>
+  </div>
+</section>
+
+<!-- DRESS CODE -->
+<section>
+  <p class="subtitle">Dress to celebrate</p>
+  <h2 class="section-title">Dress Code</h2>
+  <div class="divider"></div>
+  <div class="attire">
+    <p>
+      We invite our guests to wear elegant and traditional
+      wedding attire.
+    </p>
+    <p style="margin-top:20px;">
+      Please await our final colour palette and attire
+      recommendations.
+    </p>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="countdown-section">
+  <p class="subtitle">Join us</p>
+  <h2 class="section-title">Where to Find Us</h2>
+  <p class="intro">
+    Alcala, Pangasinan<br>
+    Philippines
+  </p>
+  <br>
+  <a class="map-button"
+     href="https://www.google.com/maps/search/?api=1&query=Alcala%2C+Pangasinan%2C+Philippines"
+     target="_blank">
+    View on Google Maps
+  </a>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp">
+  <p class="subtitle">We hope you can join us</p>
+  <h2 class="section-title">Kindly RSVP</h2>
+  <p class="intro">
+    Please let us know if you can celebrate with us.
+  </p>
+
+  <form class="rsvp-form" id="rsvpForm">
+    <label>Your Full Name</label>
+    <input type="text" id="guestName" required
+           placeholder="Enter your name">
+
+    <label>Will you attend?</label>
+    <select id="attendance" required>
+      <option value="">Please select</option>
+      <option value="Yes, attending">Joyfully accepts</option>
+      <option value="Unable to attend">Regretfully declines</option>
+    </select>
+
+    <label>Number of Guests</label>
+    <select id="guestCount">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+
+    <label>Message for the Couple (Optional)</label>
+    <textarea id="message" rows="4"
+              placeholder="Write us a message..."></textarea>
+
+    <button type="submit">Submit RSVP</button>
+  </form>
+
+  <p style="font-size:12px; margin-top:20px;">
+    Please contact the couple if you need assistance.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h2>Kenryu & Jeg Whistly</h2>
+  <p>January 10, 2027</p>
+  <p>Two hearts. One love. Forever together.</p>
+  <p>With love, we invite you to be part of our story.</p>
+</footer>
+
+<script>
+// WEDDING COUNTDOWN
+const weddingDate = new Date("2027-01-10T00:00:00");
+
+function updateCountdown() {
+  const now = new Date();
+  const difference = weddingDate - now;
+
+  if (difference <= 0) {
+    ["days","hours","minutes","seconds"].forEach(id => {
+      document.getElementById(id).textContent = "00";
+    });
+    return;
+  }
+
+  document.getElementById("days").textContent =
+    Math.floor(difference / 86400000);
+
+  document.getElementById("hours").textContent =
+    Math.floor((difference % 86400000) / 3600000);
+
+  document.getElementById("minutes").textContent =
+    Math.floor((difference % 3600000) / 60000);
+
+  document.getElementById("seconds").textContent =
+    Math.floor((difference % 60000) / 1000);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// RSVP EMAIL
+document.getElementById("rsvpForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("guestName").value;
+  const attendance = document.getElementById("attendance").value;
+  const guests = document.getElementById("guestCount").value;
+  const message = document.getElementById("message").value;
+
+  // REPLACE WITH YOUR WEDDING RSVP EMAIL ADDRESS
+  const email = "YOUR_EMAIL@example.com";
+
+  const subject = encodeURIComponent("Wedding RSVP - " + name);
+  const body = encodeURIComponent(
+    "Name: " + name +
+    "\nAttendance: " + attendance +
+    "\nNumber of guests: " + guests +
+    "\nMessage: " + message
+  );
+
+  window.location.href =
+    "mailto:" + email + "?subject=" + subject + "&body=" + body;
+});
+</script>
+
+</body>
+</html>
