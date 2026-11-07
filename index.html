@@ -1046,25 +1046,35 @@ footer .heart {
 
   <div class="rsvp-form">
 
+  
+<section id="rsvp" class="banig">
+
+  <p class="section-label">A celebration of love</p>
+  <h2 class="section-title">Kindly RSVP</h2>
+
+  <div class="ornament">❧ ♡ ❧</div>
+
+  <p class="description">
+    Your presence would make our special day even more meaningful.
+    Kindly let us know if you can celebrate with us.
+  </p>
+
+  <div class="rsvp-form">
+
     <form id="rsvpForm">
 
       <label for="guestName">Guest's Full Name</label>
-      <input
-        id="guestName"
-        type="text"
-        required
-        placeholder="Enter your full name">
+      <input id="guestName" type="text" required
+             maxlength="100" placeholder="Your full name">
 
       <label for="attendance">Will you attend?</label>
-
       <select id="attendance" required>
         <option value="">Select your response</option>
         <option value="Joyfully accepts">Joyfully accepts</option>
         <option value="Regretfully declines">Regretfully declines</option>
       </select>
 
-      <label for="guestCount">Number of Guests Attending</label>
-
+      <label for="guestCount">Number of Guests</label>
       <select id="guestCount" required>
         <option value="1">1 Guest</option>
         <option value="2">2 Guests</option>
@@ -1074,28 +1084,29 @@ footer .heart {
       </select>
 
       <label for="message">Message for the Couple</label>
+      <textarea id="message" rows="4" maxlength="500"
+                placeholder="Leave us a lovely message..."></textarea>
 
-      <textarea
-        id="message"
-        rows="4"
-        placeholder="Leave us a message..."></textarea>
+      <!-- Hidden anti-spam field -->
+      <input type="text" id="website" tabindex="-1"
+             autocomplete="off"
+             style="position:absolute;left:-9999px">
 
-      <button type="submit">
+      <button type="submit" id="rsvpButton">
         SUBMIT RSVP ♡
       </button>
 
-    </form>
+      <p id="rsvpStatus" role="status"
+         style="text-align:center;margin-top:18px;
+         font-size:16px;line-height:1.6;">
+      </p>
 
+    </form>
   </div>
 
   <div class="contact-box">
-
     <p><strong>RSVP Deadline:</strong> [INSERT DEADLINE]</p>
-
-    <p><strong>Contact:</strong> [INSERT CONTACT NUMBER]</p>
-
-    <p><strong>Email:</strong> [INSERT EMAIL ADDRESS]</p>
-
+    <p><strong>Contact:</strong> [INSERT PHONE NUMBER]</p>
   </div>
 
 </section>
@@ -1160,44 +1171,64 @@ setInterval(updateCountdown,1000);
 
 // RSVP EMAIL
 
-document.getElementById("rsvpForm")
-.addEventListener("submit",function(e) {
 
-  e.preventDefault();
+const RSVP_URL = "https://script.google.com/macros/s/AKfycby2fNqKeTJAtOEf1d9lfSO3tXBYlZLxM-ZH9gWJq2YOrDahjemEKoG8pD0FjvdF0QP2ig/exec";
 
-  const name =
-    document.getElementById("guestName").value;
+const rsvpForm = document.getElementById("rsvpForm");
+const rsvpButton = document.getElementById("rsvpButton");
+const rsvpStatus = document.getElementById("rsvpStatus");
 
-  const attendance =
-    document.getElementById("attendance").value;
+rsvpForm.addEventListener("submit", async function(event) {
+  event.preventDefault();
 
-  const guests =
-    document.getElementById("guestCount").value;
+  // Anti-spam check
+  if (document.getElementById("website").value) return;
 
-  const message =
-    document.getElementById("message").value;
+  const data = {
+    name: document.getElementById("guestName").value.trim(),
+    attendance: document.getElementById("attendance").value,
+    guests: Number(document.getElementById("guestCount").value),
+    message: document.getElementById("message").value.trim()
+  };
 
-  // CHANGE THIS TO YOUR EMAIL ADDRESS
-  const email = "YOUR_EMAIL@example.com";
+  if (!data.name || !data.attendance) {
+    rsvpStatus.textContent = "Please complete all required fields.";
+    return;
+  }
 
-  const subject = encodeURIComponent(
-    "Wedding RSVP - " + name
-  );
+  rsvpButton.disabled = true;
+  rsvpButton.textContent = "SENDING YOUR RSVP...";
+  rsvpStatus.textContent = "";
 
-  const body = encodeURIComponent(
-    "Wedding RSVP\n\n" +
-    "Guest: " + name + "\n" +
-    "Attendance: " + attendance + "\n" +
-    "Number of guests: " + guests + "\n" +
-    "Message: " + message
-  );
+  try {
+    await fetch(RSVP_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(data)
+    });
 
-  window.location.href =
-    "mailto:" + email +
-    "?subject=" + subject +
-    "&body=" + body;
+    rsvpStatus.textContent =
+      "♡ Thank you! Your RSVP has been sent to Kenryu & Jeg Whistly.";
 
+    rsvpStatus.style.color = "#47734b";
+
+    rsvpForm.reset();
+
+  } catch (error) {
+    rsvpStatus.textContent =
+      "Something went wrong. Please try again or contact the couple.";
+
+    rsvpStatus.style.color = "#a52a2a";
+
+  } finally {
+    rsvpButton.disabled = false;
+    rsvpButton.textContent = "SUBMIT RSVP ♡";
+  }
 });
+
 
 </script>
 
